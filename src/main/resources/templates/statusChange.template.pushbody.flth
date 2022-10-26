@@ -1,0 +1,7 @@
+Zmiana statusu wniosku
+Witaj,
+Twój wniosek złożony w systemie CMP zmienił status na: ${application_status}
+Wniosek dotyczy: ${cemetery_name}
+Rodzaj wniosku: ${application_type}
+Numeracja wniosku: ${application_number}
+Dodatkowe informacje: ${additional_info}

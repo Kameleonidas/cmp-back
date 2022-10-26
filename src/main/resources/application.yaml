@@ -1,0 +1,115 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /app/cmp-back
+
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cmp
+    password: cmp
+    username: cmp
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    baseline-on-migrate: true
+    out-of-order: true
+    placeholder-replacement: true
+    placeholders:
+      dictionary-import-directory: '/var/data/'
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          batch_size: 1000
+    show-sql: false
+    database-platform: org.hibernate.spatial.dialect.postgis.PostgisDialect
+  http:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  mail:
+    host: 10.71.5.10
+    port: 25
+    username:
+    password:
+    protocol: smtp
+    properties.mail.smtp:
+      auth: false
+      starttls.enable: false
+  main:
+    allow-circular-references: true
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  api-docs:
+    enabled: true
+  packagesToScan: pl.gov.cmp
+
+cmp:
+  login:
+    wk-url: http://localhost:8080/app/cmp-back/proxy/api/v1/login/wk/user/cmp
+    wk-web-url: http://localhost:8080/app/cmp-back/web/proxy/wk/login/cmp
+    return-back-url: http://localhost:8080/app/cmp-back/api/auth/login/response
+    return-front-url: http://localhost:8080/app/cmp/auth
+    jwt-secret: QAZ2wsx3EDCQWERTYUIOPASDFGHJKLQAZ2wsx3EDCQWERTYUIOPASDFGHJKLQAZ2wsx3EDCQWERTYUIOPASDFGHJKLQAZ2wsx3EDCQWERTYUIOPASDFGHJKLQAZ2wsx3EDCQWERTYUIOPASDFGHJKLQAZ2wsx3EDCQWERTYUIOPASDFGHJKLQAZ2wsx3EDCQWERTYUIOPASDFGHJKLQAZ2wsx3EDCQWERTYUIOPASDFGHJKLQAZ2wsx3EDCQWERTYUIOPASDFGHJKLQAZ2wsx3EDCQWERTYUIOPASDFGHJKL
+    jwt-token-validity: 7200000 # 2h in milliseconds
+  local-login:
+    wk-url: http://localhost:8080/app/cmp-back/local/proxy/api/v1/login/wk/user/cmp
+    wk-web-url: http://localhost:8080/app/cmp-back/local/web/proxy/wk/login/cmp
+    return-back-url: http://localhost:8080/app/cmp-back/api/auth/local/login/response
+    return-front-url: http://localhost:4200/app/cmp/auth
+  files:
+    root-path: /opt/govpl/cmp
+    attachments-storage-path: ${cmp.files.root-path}/attachments
+    images-storage-path: ${cmp.files.root-path}/images
+  invitation:
+    sender: "no-reply@mc.gov.pl"
+    template: "invitation.template"
+    # czas po którym zaproszenie wygaśnie w godzinach
+    ttl: 72
+    confirmation-urls:
+      CEMETERY: http://localhost:8080/app/cmp/zarzadzanie/moje-konto/%s
+  status-change:
+    sender: "no-reply@mc.gov.pl"
+    template: "statusChange.template"
+    applicationUrl: http://localhost:8080/app/cmp/zarzadzanie/moje-wnioski/%s
+  permission-change:
+    sender: "no-reply@mc.gov.pl"
+    template: "permissionChange.template"
+  user-identifier:
+    sender: "no-reply@mc.gov.pl"
+    template: "userIdentifier.template"
+    loginUrl: http://localhost:8080/app/cmp/logowanie
+  jobs:
+    REJECT_OLD_APPLICATIONS:
+      # wyrażenie mówi, że o zerowej sekundzie, zerowej minucie, zerowej godzinie codziennie nastąpi uruchomienie
+      cron: 0 0 0 ? * * *
+  application-rejection:
+    days-to-automatic-rejection: 14
+gugik:
+  terc-service-conf:
+    url: https://uldk.gugik.gov.pl/?request=GetRegionByXY&result=teryt,voivodeship,county,commune
+    coordinate-param-name: xy
+  address-service-conf:
+    url: https://services.gugik.gov.pl/uug/?request=GetAddressReverse&srid=2180&radius=5000
+    coordinate-param-name: location
+
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    pl.gov.cmp: INFO
+    org.springframework: WARN
+  file:
+    name: /var/log/tomcat9/cmp.log
+
+hmac:
+  key: H@McQeThWmZq4t7w

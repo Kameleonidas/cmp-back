@@ -1,0 +1,1 @@
+alter table user_accounts add column if not exists local_id varchar(9);

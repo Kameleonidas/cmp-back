@@ -1,0 +1,7 @@
+Powiadomienie o nadaniu uprawnień
+Witaj,
+zostały Ci przydzielone uprawnienia do obsługi aplikacji CMP.
+Typ uprawnień: ${roles_name}
+Nazwa instytucji: ${institution_name}
+Data nadania uprawnień: ${added_date}
+Nadający uprawnienia ${user_grant_permission_name}

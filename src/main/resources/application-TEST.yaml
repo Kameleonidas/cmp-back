@@ -1,0 +1,48 @@
+spring:
+  config:
+    activate:
+      on-profile: TEST
+  datasource:
+    url: jdbc:postgresql://cluster-db:5432/cmp
+    password: cmp
+    username: cmp
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    baseline-on-migrate: true
+    out-of-order: true
+    placeholder-replacement: true
+    placeholders:
+      dictionary-import-directory: '/var/data/'
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  mail:
+    host: mail-node
+    port: 25
+    username:
+    password:
+    protocol: smtp
+    properties.mail.smtp:
+      auth: false
+      starttls.enable: false
+
+cmp:
+  login:
+    wk-url: https://aplikacje.test.gov.pl/gateway/proxy/api/v1/login/wk/user/cmp
+    wk-web-url: https://aplikacje.test.gov.pl/gateway/web/proxy/wk/login/cmp
+    return-back-url: https://aplikacje.test.gov.pl/app/cmp-back/api/auth/login/response
+    return-front-url: https://aplikacje.test.gov.pl/app/cmp/auth
+  invitation:
+    confirmation-urls:
+      CEMETERY: http://aplikacje.test.gov.pl/app/cmp/zarzadzanie/moje-konto/%s
+  status-change:
+    applicationUrl: http://aplikacje.test.gov.pl/app/cmp/zarzadzanie/moje-wnioski/%s
+  user-identifier:
+    loginUrl: http://aplikacje.test.gov.pl/app/cmp/logowanie
+logging:
+  pattern:
+    console:
+  level:
+    pl.gov.cmp: DEBUG

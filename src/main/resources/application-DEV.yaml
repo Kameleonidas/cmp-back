@@ -1,0 +1,53 @@
+spring:
+  config:
+    activate:
+      on-profile: DEV
+  datasource:
+    url: jdbc:postgresql://cluster-db:5432/cmp
+    password: cmp
+    username: cmp
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    baseline-on-migrate: true
+    out-of-order: true
+    placeholder-replacement: true
+    placeholders:
+      dictionary-import-directory: '/var/data/'
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  mail:
+    host: 10.71.5.10
+    port: 25
+    username:
+    password:
+    protocol: smtp
+    properties.mail.smtp:
+      auth: false
+      starttls.enable: false
+
+cmp:
+  login:
+    wk-url: http://10.71.201.22:8080/app/cmp-back/proxy/api/v1/login/wk/user/cmp
+    wk-web-url: http://10.71.201.22:8080/app/cmp-back/web/proxy/wk/login/cmp
+    return-back-url: http://10.71.201.22:8080/app/cmp-back/api/auth/login/response
+    return-front-url: http://10.71.201.22:8080/app/cmp/auth
+  local-login:
+    wk-url: http://10.71.201.22:8080/app/cmp-back/local/proxy/api/v1/login/wk/user/cmp
+    wk-web-url: http://10.71.201.22:8080/app/cmp-back/local/web/proxy/wk/login/cmp
+    return-back-url: http://10.71.201.22:8080/app/cmp-back/api/auth/local/login/response
+    return-front-url: http://localhost:4200/app/cmp/auth
+  invitation:
+    confirmation-urls:
+      CEMETERY: http://10.71.201.22:8080/app/cmp/zarzadzanie/moje-konto/%s
+  status-change:
+    applicationUrl: http://10.71.201.22:8080/app/cmp/zarzadzanie/moje-wnioski/%s
+  user-identifier:
+    loginUrl: http://10.71.201.22:8080/app/cmp/logowanie
+logging:
+  pattern:
+    console:
+  level:
+    pl.gov.cmp: DEBUG

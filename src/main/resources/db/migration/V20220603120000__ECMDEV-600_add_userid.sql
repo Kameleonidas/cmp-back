@@ -1,0 +1,1 @@
+alter table application_cemetery_applicants add column if not exists user_id bigint;

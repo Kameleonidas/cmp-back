@@ -1,0 +1,1 @@
+alter table application_cemetery_user_admins alter column admin_data_the_same_as_obj_manager_or_perp_user_or_obj_owner type varchar (250);

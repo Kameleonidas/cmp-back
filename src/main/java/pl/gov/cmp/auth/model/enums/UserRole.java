@@ -1,0 +1,16 @@
+package pl.gov.cmp.auth.model.enums;
+
+public enum UserRole {
+
+    SYSTEM_ADMIN,
+    USER_ADMIN,
+    CEMETERY_ADMIN,
+    CEMETERY_EMPLOYEE,
+    APPLICATION_OPERATOR,
+    CREMATORIUM_EMPLOYEE,
+    VOIVODESHIP_EMPLOYEE,
+    IPN_EMPLOYEE,
+    KPRM_EMPLOYEE,
+    SYSTEM_USER
+
+}

@@ -1,0 +1,8 @@
+Zaproszenie do utworzenia konta
+Witaj,
+wskazano Cię jako użytkownika aplikacji CMP. Uwierzytelnij się poprzez węzeł krajowy aby móc korzystać z aplikacji
+Po poprawnym uwierzytelnieniu otrzymasz mailowe powiadomienie o nadaniu uprawnień, po którym będzie możliwa obsługa aplikacji dla wskazanej instytucji.
+Nazwa instytucji: ${institution_name}
+Adres instytucji: ${institution_address}
+Kontakt do instytucji: ${institution_contact}
+To jest wiadomość automatyczna, nie odpowiadaj na nią.

@@ -1,0 +1,2 @@
+alter table application_cemetery_image rename column cemetery_id to application_id;
+alter table application_cemetery_attachment rename column cemetery_id to application_id;

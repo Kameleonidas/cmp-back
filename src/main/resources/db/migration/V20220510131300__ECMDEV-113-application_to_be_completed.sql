@@ -1,0 +1,1 @@
+ALTER TABLE application_cemeteries add column if not exists fields_to_be_completed jsonb;

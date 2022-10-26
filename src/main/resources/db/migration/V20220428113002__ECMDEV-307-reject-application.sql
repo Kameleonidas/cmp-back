@@ -1,0 +1,1 @@
+alter table applications add column if not exists rejection_reason_description varchar(4000);

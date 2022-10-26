@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>71289022-CDA9-4BEE-A7AD-AE407CCC4B8F</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ikona/nawigacja/?">
+            <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+            <g id="?" transform="translate(3.000000, 3.000000)">
+                <text font-family="OpenSans-Bold, Open Sans" font-size="10" font-weight="bold" fill="#F6A500">
+                    <tspan x="4.61474609" y="11">?</tspan>
+                </text>
+                <circle id="Oval" stroke="#EBA828" stroke-width="1.16666667" cx="7" cy="7" r="7"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

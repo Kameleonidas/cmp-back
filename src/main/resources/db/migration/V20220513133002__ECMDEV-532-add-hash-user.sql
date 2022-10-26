@@ -1,0 +1,1 @@
+INSERT INTO public.user_accounts(wk_id, first_name, last_name) VALUES ('6442D06788C7A605D8D7CCE37FEEC14E724471949DBCA4E1880D259499EC977E', 'Jan', 'Testowy');
