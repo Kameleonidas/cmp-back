@@ -8,8 +8,8 @@ spring:
     active: local
   datasource:
     url: jdbc:postgresql://localhost:5432/cmp
-    password: cmp
-    username: cmp
+    password: admin
+    username: postgres
     driver-class-name: org.postgresql.Driver
   flyway:
     baseline-on-migrate: true

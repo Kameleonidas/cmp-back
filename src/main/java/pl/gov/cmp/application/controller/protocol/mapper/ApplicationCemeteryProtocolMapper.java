@@ -60,6 +60,6 @@ public interface ApplicationCemeteryProtocolMapper {
 
     @Named("enumToString")
     default String getStatusName(ApplicationStatus status) {
-        return status.getName();
+        return status != null ? status.getName() : null;
     }
 }

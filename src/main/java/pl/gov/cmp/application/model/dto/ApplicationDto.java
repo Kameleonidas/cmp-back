@@ -15,7 +15,7 @@ public class ApplicationDto {
     private Long id;
     private String appNumber;
     private ApplicationType appType;
-    private ApplicationStatus appStatus;
+    private String appStatus;
     private String objectName;
     private LocalDateTime createDate;
     private LocalDateTime updateDate;

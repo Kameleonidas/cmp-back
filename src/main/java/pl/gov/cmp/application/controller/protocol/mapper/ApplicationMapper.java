@@ -50,7 +50,7 @@ public interface ApplicationMapper {
         applicationResponse.setId( applicationDto.getId() );
         applicationResponse.setAppNumber( applicationDto.getAppNumber() );
         applicationResponse.setAppType( applicationDto.getAppType().getName() );
-        applicationResponse.setAppStatus( applicationDto.getAppStatus().getName() );
+        applicationResponse.setAppStatus( applicationDto.getAppStatus() );
         applicationResponse.setObjectName( applicationDto.getObjectName() );
         applicationResponse.setCreateDate( applicationDto.getCreateDate() );
         applicationResponse.setUpdateDate( applicationDto.getUpdateDate() );
@@ -88,6 +88,7 @@ public interface ApplicationMapper {
             .sortOrder(request.getSortOrder())
             .appNumber(request.getAppNumber())
             .appType(Enum.valueOf( ApplicationType.class, request.getAppType()))
+            .appStatus(request.getAppStatus())
             .applicantFirstName(request.getApplicantFirstName())
             .applicantLastName(request.getApplicantLastName())
             .userFirstName(request.getUserFirstName())
